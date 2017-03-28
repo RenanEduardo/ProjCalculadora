@@ -7,10 +7,10 @@ package br.seminario.calculadora.Operacoes;
 
 /**
  *
- * @author renan
- * @version 0.2
+ * @author Renan
+ * @version 0.1
  */
-public class Soma {
+public class Multiplicacao {
 
     /**
      * @return the a
@@ -53,22 +53,23 @@ public class Soma {
     public void setResultado(int resultado) {
         this.resultado = resultado;
     }
-    private int a;
-    private int b;
-    private int resultado;
+   private int a;
+   private int b;
+   private int resultado;
+   
+   public Multiplicacao()
+   {
+       this.a = 0;
+       this.b = 0;
+       this.resultado = 0;
+   }
+   
+   public int multiplica(int x, int y)
+   {
+       this.setA(x);
+       this.setB(y);
+       this.setResultado(x * y);
+       return this.getResultado();
+   }
     
-    public Soma()
-    {
-        this.a = 0;
-        this.b = 0;
-        this.resultado = 0;
-    }
-    
-    public int soma(int x, int y)
-    {
-        this.setA(x);
-        this.setB(y);
-        this.setResultado(x + y);
-        return this.getResultado();
-    }
 }

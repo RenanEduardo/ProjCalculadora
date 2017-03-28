@@ -434,7 +434,11 @@ public class CalculadoraFrame extends javax.swing.JFrame {
                 int valor = op.verificaOperacao("\\+", calculo);
                 String resultado = String.valueOf(valor);
                 mostraResultado(resultado);
-                
+            }else if (calculo.contains("X"))
+            {
+                int valor = op.verificaOperacao("X", calculo);
+                String resultado = String.valueOf(valor);
+                mostraResultado(resultado);
             }
         }
     }//GEN-LAST:event_botaoIgualActionPerformed
