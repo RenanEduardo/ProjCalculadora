@@ -431,12 +431,24 @@ public class CalculadoraFrame extends javax.swing.JFrame {
         {
             if(calculo.contains("+"))
             {
-                int valor = op.verificaOperacao("\\+", calculo);
+                float valor = op.verificaOperacao("\\+", calculo);
                 String resultado = String.valueOf(valor);
                 mostraResultado(resultado);
-            }else if (calculo.contains("X"))
+            }
+            else if (calculo.contains("-"))
             {
-                int valor = op.verificaOperacao("X", calculo);
+                float valor = op.verificaOperacao("\\-", calculo);
+                String resultado = String.valueOf(valor);
+                mostraResultado(resultado);
+            }
+            else if (calculo.contains("X"))
+            {
+                float valor = op.verificaOperacao("X", calculo);
+                String resultado = String.valueOf(valor);
+                mostraResultado(resultado);
+            }else if (calculo.contains("/"))
+            {
+                float valor = op.verificaOperacao("/", calculo);
                 String resultado = String.valueOf(valor);
                 mostraResultado(resultado);
             }
