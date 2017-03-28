@@ -14,10 +14,15 @@ package br.seminario.calculadora.Operacoes;
 public class Operacao {
     private Soma soma;
     private Multiplicacao multi;
+    private Subtracao subtracao;
+    private Divisao divisao;
+    
     public Operacao()
     {
         soma = new Soma();
         multi = new Multiplicacao();
+        subtracao = new Subtracao();
+        divisao = new Divisao();
     }
     
     private int verificaQntOp(String op, String calc)
@@ -53,9 +58,9 @@ public class Operacao {
         }
         return valores;
     }
-    public int verificaOperacao(String op, String calc)
+    public float verificaOperacao(String op, String calc)
     {
-        int resultado;
+        float resultado;
         int[] valores = new int[2];
         switch (op)
         {
@@ -63,11 +68,21 @@ public class Operacao {
                 valores = this.trataString(op, calc);
                 resultado = soma.soma(valores[0], valores[1]);
                 return resultado;
+            
+             case "\\-":
+                valores = this.trataString(op, calc);
+                resultado = subtracao.subtrait(valores[0], valores[1]);
+                return resultado;
              
                 
             case "X":
                 valores = this.trataString(op, calc);
                 resultado = multi.multiplica(valores[0], valores[1]);
+                return resultado;
+                
+             case "/":
+                valores = this.trataString(op, calc);
+                resultado = divisao.divide(valores[0], valores[1]);
                 return resultado;
             default:
                 break;
