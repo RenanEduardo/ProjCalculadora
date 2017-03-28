@@ -13,10 +13,11 @@ package br.seminario.calculadora.Operacoes;
  */
 public class Operacao {
     private Soma soma;
-    
+    private Multiplicacao multi;
     public Operacao()
     {
         soma = new Soma();
+        multi = new Multiplicacao();
     }
     
     private int verificaQntOp(String op, String calc)
@@ -55,11 +56,18 @@ public class Operacao {
     public int verificaOperacao(String op, String calc)
     {
         int resultado;
+        int[] valores = new int[2];
         switch (op)
         {
             case "\\+":
-                int[] valores = this.trataString(op, calc);
+                valores = this.trataString(op, calc);
                 resultado = soma.soma(valores[0], valores[1]);
+                return resultado;
+             
+                
+            case "X":
+                valores = this.trataString(op, calc);
+                resultado = multi.multiplica(valores[0], valores[1]);
                 return resultado;
             default:
                 break;
